@@ -1,0 +1,171 @@
+<div>
+  <div class="container flex">
+    <div class="intro" [ngClass]="animateOnRouteEnter">
+      <h2>I am Chris</h2>
+      <p>
+        My name is Chris and I am a <span>full stack web developer</span> in Maui, Hawaii.
+      </p>
+      <p>
+        I've been developing <span>custom web applications</span> for nearly twenty years. Everything from little
+        Wordpress sites to big, <span>monster database-driven applications</span>.
+      </p>
+      <p>
+        I'm always interested in working on new and exciting projects. <a id="contact" href="mailto:{{email}}">Feel free to contact me.</a>
+      </p>
+    </div>
+    <div class="face w-1/2" [ngClass]="animateOnRouteEnter">
+      <img src="/assets/img/my-stupid-face.png" alt="">
+    </div>
+  </div>
+</div>
+<div class="dark">
+  <div class="skills container" [ngClass]="animateOnRouteEnter">
+    <h3>What I Do</h3>
+    <div class="skillsets">
+      <div class="skillset">
+        <div class="flex">
+          <div class="mr-4 pt-1">
+            <i class="fas fa-magic"></i>
+          </div>
+          <div>
+            <h4>Languages</h4>
+            <p>
+              JavaScript, TypeScript, Coldfusion, PHP, Python
+            </p>
+          </div>
+        </div>
+        <div class="flex">
+          <div class="mr-4 pt-1">
+            <i class="fas fa-landmark"></i>
+          </div>
+          <div>
+            <h4>Frameworks</h4>
+            <p>
+              Angular, Vue.js, ColdBox, Laravel, Django, jQuery
+            </p>
+          </div>
+        </div>
+        <div class="flex">
+          <div class="mr-4 pt-1">
+            <i class="fas fa-search-dollar"></i>
+          </div>
+          <div>
+            <h4>CMS/eCommerce</h4>
+            <p>
+              Wordpress, Big Commerce, Shopify
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="skillset">
+        <div class="flex">
+          <div class="mr-4 pt-1">
+            <i class="fas fa-database"></i>
+          </div>
+          <div>
+            <h4>Databases</h4>
+            <p>
+              SQL Server, Oracle, MySQL, Firebse, MongoDB
+            </p>
+          </div>
+        </div>
+        <div class="flex">
+          <div class="mr-4 pt-1">
+            <i class="fas fa-wrench"></i>
+          </div>
+          <div>
+            <h4>Tools</h4>
+            <p>
+              Webpack, D3, VS Code, WebStorm/PHPStorm, Postman
+            </p>
+          </div>
+        </div>
+        <div class="flex">
+          <div class="mr-4 pt-1">
+            <i class="fas fa-palette"></i>
+          </div>
+          <div>
+            <h4>Presentation</h4>
+            <p>
+              HTML5, CSS3, SASS, Bootstrap, Material, Tailwind CSS
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div>
+  <div class="latest-project container" [ngClass]="animateOnRouteEnter">
+    <h3>Latest Project</h3>
+
+    <div class="project-container flex">
+      <div class="project-images">
+        <img *ngFor="let projImage of projectImages; let i = index" 
+        src="/assets/img/{{projImage}}" class="hidden">
+        <!-- <img src="/assets/img/sigma-3.jpg" class="hidden">
+        <img src="/assets/img/sigma-4.jpg" class="hidden">
+        <img src="/assets/img/sigma-5.jpg" class="hidden"> -->
+        <img 
+          id="project-image"  
+          [ngClass]="animateOnRouteEnter" 
+          [@fade]="state" 
+          (@fade.done)="onDone($event)"
+          (click)="onClick(currentImage+1)" 
+          [src]="projectImage">
+        <div class="paging">
+          <ul id="paging-options">
+            <li (click)="onClick(currentImage-1)">&lt;</li>
+            <li 
+              *ngFor="let projImage of projectImages; let i = index"
+              [ngClass]="currentImage - 1 === i ? 'active' : ''"
+              (click)="onClick(i+1)">
+              {{i+1}}
+            </li>
+            <li (click)="onClick(currentImage+1)">&gt;</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-description">
+        <h4>SIGMA Surgical</h4>
+        <p>
+          SIGMA is a cloud-based platform that allows surgeons and residents to author and share protocols, document cases, and analyze the process by which an operation is performed.
+        </p>
+        <p>
+          This project was a redesign and upgrade resulting in a vastly improved UI/UX featuring a greater emphasis on front end functionality.
+        </p>
+        <p>
+          Developed with ColdFusion, MySQL, JavaScript, jQuery, and D3.js.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="dark">
+  <div class="footer container flex space-between">
+    <div class="copyright">&copy; {{thisYear}} <a href="http://iamchris.io" class="mx-2">iamchris.io</a> | <a href="http://ccrooke.com"  class="ml-2">ccrooke.com</a></div>
+    <div class="copyright mx-auto">
+      made with <a href="https://angular.io/">angular</a>, <a href="https://tailwindcss.com">tailwind css</a>, and <a href="https://mmmmwhiskey.firebaseapp.com/">whiskey</a>
+    </div>
+    <div class="footer-icons ">
+      <ul>
+        <li>
+          <a href="mailto:{{email}}" id="footer-contact"><i title="Send me an email" class="fas fa-envelope"></i></a>
+        </li><!-- flask glass-martini-alt  -->
+        <li>
+          <a href="https://mmmmwhiskey.firebaseapp.com" id="footer-contact" class="ml-2"><i title="Sample Angular app" class="fas fa-glass-martini-alt"></i></a>
+        </li>
+        <li>
+          <a href="/assets/chris-crooke-resume.pdf" class="ml-2"><i title="My resume" class="fas fa-file-pdf"></i></a>
+        </li>
+        <li>
+          <a href="https://github.com/ccrookewebdesign" class="ml-2"><i title="Me on Github" class="fab fa-github"></i></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/christopher-crooke/" class="ml-2"><i title="Me on LinkedIn" class="fab fa-linkedin"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
