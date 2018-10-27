@@ -1,0 +1,103 @@
+<div class="portfolio">
+  <div *ngIf="!isLoggedIn" class="portfolio-login">
+    <h4 class="mx-auto mb-8">Customize Experience</h4>
+    <form [formGroup]="form">
+    
+    <div class=" flex space-around">
+      <input
+        id="login"
+        type="text"
+        class="ml-auto mr-2"
+        formControlName="login"
+        placeholder="Invite Code">
+      <button class="mr-auto" (click)="btnClick()">Login</button>
+    </div>
+    <p *ngIf="loginError" class="error mt-2">This invite code has expired or is inavlid</p>
+  </form>
+  </div>
+
+  <div *ngIf="isLoggedIn">
+    <div 
+      *ngIf="guest === 'headfarmer'"
+      [@fade]="state" 
+      (@fade.done)="onDone($event)">
+      <h4>Aloha John</h4>
+      <p class="mb-12 mt-4">
+        I have a few projects I'd like to share with you that may be relevant to the opportunity we've discussed.
+      </p>
+      <div class="project-container flex mt-4 mb-12">
+        <div class="project-images mb-8">
+          <img src="/assets/img/maxwellsc-1.jpg">
+        </div>
+        <div class="project-description">
+          <h4>Steve Maxwell Strength & Conditioning</h4>
+          <p>2005 - 2018</p>
+          <p>
+            Steve Maxwell is a renowned strength and conditioning coach and brazilian jiu jitsu black belt.
+          </p>
+          <p>
+            Steve's site is feature rich and highly functional. It includes database driven content, custom online event registration, a custom blog, and online store.
+          </p>
+          <p> 
+            Over the years the site has grown into a full-on web application and is now a very big part of his business!
+          </p>
+          <p>
+            Developed with ColdFusion, Microsoft SQL Server, JavaScript, and jQuery.
+          </p>
+          <p>
+            <a href="http://www.maxwellsc.com" target="_blank">www.maxwellsc.com</a>
+          </p>
+        </div>
+      </div>
+      <div class="project-container flex mt-8 mb-12">
+        <div class="project-images mb-8">
+          <img src="/assets/img/rkma-1.jpg">
+        </div>
+        <div class="project-description">
+          <h4>Richark K Miller & Associates</h4>
+          <p>2003 - 2018</p>
+          <p>
+            Richard K. Miller & Associates (RKMA) publishes business reference handbooks focused on marketing and the consumer marketplace.
+          </p>
+          <p>
+            The RKMA website features an extensive admin interface allowing them to dynamically create distinct, IP-protected micro-sites for each customer at the click of a button.
+          </p>
+          <p> 
+            The functionality of the site has allowed RKMA to completely re-work their business model, lowering costs and increasing profits. 
+          </p>
+          <p>
+            Developed with ColdFusion, Microsoft SQL Server, and JavaScript.
+          </p>
+          <p>
+            <a href="http://www.rkma.com" target="_blank">www.rkma.com</a>
+          </p>
+        </div>
+      </div>
+      <div class="project-container flex mt-8">
+        <div class="project-images mb-8">
+          <img src="/assets/img/invoice-tracker-1.jpg">
+        </div>
+        <div class="project-description">
+          <h4>Invoice Tracker</h4>
+          <p>2006 - 2018</p>
+          <p>
+            This is my custom designed, in-house invoice tracking system.
+          </p>
+          <p>
+            It allows me to easily track my time, expenses, and invoices, and to generate PDF invoices that are emailed to clients at the click of a button.
+          </p>
+          <p> 
+            It alerts me when I am late on completing tasks or when clients are late in payment.
+          </p>
+          <p>
+            Developed with ColdFusion, Microsoft SQL Server, and JavaScript.
+          </p>
+          <p>
+            <a href="mailto:chris@ccrooke.com" target="_blank">contact me for a demo</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>

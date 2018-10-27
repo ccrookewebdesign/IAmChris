@@ -65,7 +65,7 @@
           <div>
             <h4>Databases</h4>
             <p>
-              SQL Server, Oracle, MySQL, Firebse, MongoDB
+              MS SQL Server, Oracle, MySQL, Firebase, MongoDB
             </p>
           </div>
         </div>
@@ -99,14 +99,15 @@
 <div>
   <div class="latest-project container" [ngClass]="animateOnRouteEnter">
     <h3>Latest Project</h3>
-
+    <p class="mt-4 mb-12">
+      This project is currently unavailable to present in a public scope.
+      <a href="mailto:{{email}}">Contact me</a> for a demo.
+    </p>
     <div class="project-container flex">
       <div class="project-images">
         <img *ngFor="let projImage of projectImages; let i = index" 
         src="/assets/img/{{projImage}}" class="hidden">
-        <!-- <img src="/assets/img/sigma-3.jpg" class="hidden">
-        <img src="/assets/img/sigma-4.jpg" class="hidden">
-        <img src="/assets/img/sigma-5.jpg" class="hidden"> -->
+        
         <img 
           id="project-image"  
           [ngClass]="animateOnRouteEnter" 
@@ -129,6 +130,7 @@
       </div>
       <div class="project-description">
         <h4>SIGMA Surgical</h4>
+        <p>2018</p>
         <p>
           SIGMA is a cloud-based platform that allows surgeons and residents to author and share protocols, document cases, and analyze the process by which an operation is performed.
         </p>
@@ -140,10 +142,13 @@
         </p>
       </div>
     </div>
+    
+    <portfolio></portfolio>
+    
   </div>
 </div>
 <div class="dark">
-  <div class="footer container flex space-between">
+  <div class="footer container flex space-between" [ngClass]="animateOnRouteEnter">
     <div class="copyright">&copy; {{thisYear}} <a href="http://iamchris.io" class="mx-2">iamchris.io</a> | <a href="http://ccrooke.com"  class="ml-2">ccrooke.com</a></div>
     <div class="copyright mx-auto">
       made with <a href="https://angular.io/">angular</a>, <a href="https://tailwindcss.com">tailwind css</a>, and <a href="https://mmmmwhiskey.firebaseapp.com/">whiskey</a>

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
+import {PortfolioComponent } from './portfolio/portfolio.component';
 
 import { fade, ANM_ROUTE_ENTER, routerTransition } from './router.transition';
-//https://stackblitz.com/edit/angular-anim-fade-img?file=app%2Fapp.component.ts
+
 @Component({
   selector: 'home',
   animations: [fade, routerTransition],
